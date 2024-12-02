@@ -1,0 +1,129 @@
+:root {
+    --my-padding: 0.4rem;
+}
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Oswald:wght@200..700&family=Roboto:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 0.5fr 2fr 1fr 1fr 1fr; 
+    grid-template-areas: 
+        "header menu menu menu"
+        "hero hero hero hero"
+        "main main image image"
+        "main main extra extra"
+        "banner banner banner banner"
+        ;
+
+        height: 100vh;
+        text-align: center;
+        font-family: "Lato", sans-serif;
+        text-transform: uppercase;
+    
+}
+
+/* Grid elemendid */
+.header {
+    align-items: center;
+    display: grid;
+    grid-area: header;
+    background-color: black;
+    color: white;
+    padding: var(--my-padding);
+}
+
+.menu {
+    align-items: center;
+    display: grid;  
+    grid-area: menu;
+    background-color: red;
+    color: white;
+    padding: var(--my-padding);
+}
+
+.hero {
+    align-items: center;
+    display: grid;
+    grid-area: hero;
+    background-color: rgb(100, 100, 172);
+    color: white;
+    padding: var(--my-padding);
+}
+
+.main {
+    align-items: center;
+    display: grid;
+    grid-area: main;
+    background-color: brown;
+    color: white;
+    padding: var(--my-padding);
+}
+
+.extra {
+    align-items: center;
+    display: grid;
+    grid-area: extra;
+    background-color: green;
+    color: white;
+    padding: var(--my-padding);
+}
+
+.image {
+    align-items: center;
+    display: grid;
+    grid-area: image;
+    background-color: lightblue;
+    color: white;
+    padding: var(--my-padding);
+}
+
+.banner {
+    align-items: center;
+    display: grid;
+    grid-area: banner;
+    background-color: orange;
+    color: white;
+    padding: var(--my-padding);
+}
+
+/* Tableti paigutus */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 0.3fr 1fr 0.5fr;
+        grid-template-rows: 0.5fr 2fr 2.5fr 1fr 1fr;
+        grid-template-areas: 
+            "header header header"
+            "hero hero hero"
+            "menu main main"
+            "menu banner banner"
+            "menu extra image";
+    }
+    
+}
+
+/* Telo paigutus */
+@media (max-width: 480px) {
+    .container {
+        gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr 1.5fr 2fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "header"
+            "menu"
+            "hero"
+            "main"
+            "banner"
+            "extra"
+            "image"
+        ;
+    }
+
+    
+}
+
